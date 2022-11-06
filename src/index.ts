@@ -18,5 +18,14 @@ enum Size {Small=1,Medium,Large};
 let mySize: Size = Size.Medium;
 console.log(mySize)
 
+// Functions
+function CalculateTax(income: number): number {
+    if (income < 50000)
+      return income * 1.2;
+    return income * 1.3;
+
+}
+console.log(CalculateTax(10000))
+
 
 

@@ -19,3 +19,10 @@ var Size;
 ;
 let mySize = Size.Medium;
 console.log(mySize);
+// Functions
+function CalculateTax(income) {
+    if (income < 50000)
+        return income * 1.2;
+    return income * 1.3;
+}
+console.log(CalculateTax(10000));
