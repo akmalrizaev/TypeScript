@@ -10,5 +10,8 @@ let level = 5;
 let arr: number[] = [1,2,3,4,5]
 let arr2 = [1,2,3]
 
+// Tuples
+let user: [number, string] = [1, 'Akmal']
+
 
 
