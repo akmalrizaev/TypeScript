@@ -37,5 +37,18 @@ let employee: {
 
 }
 
+// Type Aliases
+type Employee = {
+    readonly id: number,
+    name: string
+}
+
+let employee2: Employee = {
+    id: 1,
+    name:''
+}
+
+
+
 
 
