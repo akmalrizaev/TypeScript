@@ -48,6 +48,14 @@ let employee2: Employee = {
     name:''
 }
 
+// Union Types
+function KgToLbs(weight: number | string): number {
+    if (typeof weight === 'string') {
+        return weight.length
+    }
+    return weight
+}
+
 
 
 
