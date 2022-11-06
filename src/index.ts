@@ -27,5 +27,15 @@ function CalculateTax(income: number): number {
 }
 console.log(CalculateTax(10000))
 
+// Objects
+let employee: {
+    readonly id: number,
+    name: string
+} = {
+    id: 1,
+    name:''
+
+}
+
 
 
