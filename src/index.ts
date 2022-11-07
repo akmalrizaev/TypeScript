@@ -56,6 +56,15 @@ function KgToLbs(weight: number | string): number {
     return weight
 }
 
+// Literal Types
+// (exact,specefic)
+type Quantity = 50 | 100;
+let quantity: Quantity = 100;
+
+type Metric = 'cm' | 'inch';
+
+
+
 
 
 
