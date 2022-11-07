@@ -63,6 +63,17 @@ let quantity: Quantity = 100;
 
 type Metric = 'cm' | 'inch';
 
+// Nullable Types
+
+function greet(name: string | null | undefined) {
+    if (name)
+      console.log(name.toLocaleUpperCase());
+    else 
+      console.log('Hola!');  
+}
+
+greet(null)
+
 
 
 
