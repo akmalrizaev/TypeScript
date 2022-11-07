@@ -82,6 +82,13 @@ let ride = {
     speed: speed ?? 30
 }
 
+// The unknown Type
+function render(document: unknown) {
+    if (typeof document === 'string') {
+        document.toUpperCase();
+    }
+    
+}
 
 
 
