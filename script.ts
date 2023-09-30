@@ -53,3 +53,15 @@ interface IBmw extends ICar {
 //Literal type
 
 let car: 'bmw' = 'bmw';
+
+// ENUM
+
+enum Dictionary {
+  Rus,
+  Uzb,
+  Eng,
+}
+
+const uzbIndex = Dictionary.Uzb;
+const uzb = Dictionary[uzbIndex];
+console.log(uzb);
