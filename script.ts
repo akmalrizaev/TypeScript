@@ -20,4 +20,36 @@ smth = {
 };
 console.log(smth);
 
+function logger(a: number): number {
+  return a * 2;
+}
+
 console.log(name);
+
+//Type
+
+type CarType = {
+  name: string;
+  year?: string;
+};
+
+type BmwType = CarType & {
+  color: string;
+  extraBallon: boolean;
+};
+
+// Interface
+
+interface ICar {
+  name: string;
+  year?: string;
+}
+
+interface IBmw extends ICar {
+  color: string;
+  extraBallon: boolean;
+}
+
+//Literal type
+
+let car: 'bmw' = 'bmw';
