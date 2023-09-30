@@ -65,3 +65,17 @@ enum Dictionary {
 const uzbIndex = Dictionary.Uzb;
 const uzb = Dictionary[uzbIndex];
 console.log(uzb);
+
+// Tuples
+
+const aray: [number, number, string] = [1, 2, 'a'];
+
+// Generics
+
+function loggerTime<T>(number: T): T {
+  console.log(new Date());
+  return number;
+}
+
+loggerTime<number>(9);
+loggerTime<string>('Akmal');
