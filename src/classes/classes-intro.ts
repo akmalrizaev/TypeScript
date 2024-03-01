@@ -3,14 +3,22 @@
 // console.log(date.getTime());
 
 class Course {
-  title: string;
-  subtitle: string;
-  creationDt: Date;
+  // private title: string;
+  // private subtitle: string;
+  // private creationDt: Date;
 
-  constructor(title: string, subtitle: string, creationDt: Date) {
-    this.title = title;
-    this.subtitle = subtitle;
-    this.creationDt = creationDt;
+  constructor(
+    private title: string,
+    private subtitle: string,
+    private creationDt: Date
+  ) {
+    // this.title = title;
+    // this.subtitle = subtitle;
+    // this.creationDt = creationDt;
+  }
+
+  changeTitle() {
+    this.title = '';
   }
 
   age() {
