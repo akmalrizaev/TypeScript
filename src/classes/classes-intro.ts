@@ -8,7 +8,7 @@ class Course {
   // private creationDt: Date;
 
   constructor(
-    private title: string,
+    private _title: string,
     private subtitle: string,
     private creationDt: Date
   ) {
@@ -21,16 +21,35 @@ class Course {
     this.title = '';
   }
 
-  age() {
+  get age() {
     const ageInMs = new Date().getTime() - this.creationDt.getTime();
     return Math.round(ageInMs / 1000 / 60 / 24); // age in days
   }
+
+  get title() {
+    return this._title;
+  }
+
+  set title(newTitle: string) {
+    if (!newTitle) {
+      throw 'Title cannot be empty';
+    }
+    this._title = newTitle;
+  }
 }
 
-const mycourse = new Course(
+const typescript = new Course(
   'Typesript Bootcamp',
   'Learn the language fundamentals',
   new Date(2020, 1, 1)
 );
 
-console.log(mycourse.age());
+console.log(typescript.title);
+
+const angular = new Course(
+  'Angular Bootcamp',
+  'Learn Angular Fundamentals',
+  new Date(2022, 1, 1)
+);
+
+console.log(angular.title);
