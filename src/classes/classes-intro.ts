@@ -26,6 +26,8 @@ class Course {
   }
 
   validate() {
+    console.log('Called Course validation()');
+
     if (this.price <= 0) {
       throw 'Price must be larger than zero';
     }
@@ -56,6 +58,20 @@ class Course {
   }
 }
 
+class FreeCourse extends Course {
+  constructor(
+    title: string,
+    subtitle: string,
+    creationDt = new Date(2023, 1, 1)
+  ) {
+    super(title, 0, subtitle, creationDt);
+  }
+
+  validate() {
+    console.log('Called FreeCourse validation()');
+  }
+}
+
 const typescript = new Course(
   'Typesript Bootcamp',
   100,
@@ -71,7 +87,7 @@ console.log(Course.TOTAL_COURSE);
 
 const angular = new Course(
   'Angular Bootcamp',
-  0,
+  200,
   'Learn Angular Fundamentals',
   new Date(2022, 1, 1)
 );
@@ -79,3 +95,9 @@ const angular = new Course(
 console.log(angular.title);
 
 Course.printTitle(typescript);
+
+const javascript = new FreeCourse(
+  'Javascript Bootcamp',
+  'Learn Javascript Fundamentals',
+  new Date(2024, 1, 1)
+);
