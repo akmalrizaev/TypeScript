@@ -2,7 +2,7 @@
 
 // console.log(date.getTime());
 
-class Course {
+abstract class Course {
   // private title: string;
   // private subtitle: string;
   // private creationDt: Date;
@@ -11,7 +11,7 @@ class Course {
 
   static readonly TYPESCRIPT_TITLE = 'Typescript Bootcamp';
 
-  constructor(
+  protected constructor(
     protected _title: string,
     protected price: number,
     protected subtitle: string,
@@ -25,13 +25,14 @@ class Course {
     Course.TOTAL_COURSE++;
   }
 
-  protected validate() {
-    console.log('Called Course validation()');
+  protected abstract validate();
+  // {
+  //   console.log('Called Course validation()');
 
-    if (this.price <= 0) {
-      throw 'Price must be larger than zero';
-    }
-  }
+  //   if (this.price <= 0) {
+  //     throw 'Price must be larger than zero';
+  //   }
+  // }
 
   changeTitle() {
     this.title = '';
@@ -72,29 +73,29 @@ class FreeCourse extends Course {
   }
 }
 
-const typescript = new Course(
-  'Typesript Bootcamp',
-  100,
-  'Learn the language fundamentals',
-  new Date(2020, 1, 1)
-);
+// const typescript = new Course(
+//   'Typesript Bootcamp',
+//   100,
+//   'Learn the language fundamentals',
+//   new Date(2020, 1, 1)
+// );
 
-console.log(typescript.title);
+// console.log(typescript.title);
 
-console.log(Course.TYPESCRIPT_TITLE);
+// console.log(Course.TYPESCRIPT_TITLE);
 
-console.log(Course.TOTAL_COURSE);
+// console.log(Course.TOTAL_COURSE);
 
-const angular = new Course(
-  'Angular Bootcamp',
-  200,
-  'Learn Angular Fundamentals',
-  new Date(2022, 1, 1)
-);
+// const angular = new Course(
+//   'Angular Bootcamp',
+//   200,
+//   'Learn Angular Fundamentals',
+//   new Date(2022, 1, 1)
+// );
 
-console.log(angular.title);
+// console.log(angular.title);
 
-Course.printTitle(typescript);
+// Course.printTitle(typescript);
 
 const javascript = new FreeCourse(
   'Javascript Bootcamp',
