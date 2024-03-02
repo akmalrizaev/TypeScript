@@ -7,6 +7,10 @@ class Course {
   // private subtitle: string;
   // private creationDt: Date;
 
+  static TOTAL_COURSE = 0;
+
+  static readonly TYPESCRIPT_TITLE = 'Typescript Bootcamp';
+
   constructor(
     private _title: string,
     private subtitle: string,
@@ -15,6 +19,7 @@ class Course {
     // this.title = title;
     // this.subtitle = subtitle;
     // this.creationDt = creationDt;
+    Course.TOTAL_COURSE++;
   }
 
   changeTitle() {
@@ -45,6 +50,10 @@ const typescript = new Course(
 );
 
 console.log(typescript.title);
+
+console.log(Course.TYPESCRIPT_TITLE);
+
+console.log(Course.TOTAL_COURSE);
 
 const angular = new Course(
   'Angular Bootcamp',
