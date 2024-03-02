@@ -26,6 +26,10 @@ class Course {
     this.title = '';
   }
 
+  static printTitle(course: Course) {
+    console.log(`The title of the course ${course.title}`);
+  }
+
   get age() {
     const ageInMs = new Date().getTime() - this.creationDt.getTime();
     return Math.round(ageInMs / 1000 / 60 / 24); // age in days
@@ -62,3 +66,5 @@ const angular = new Course(
 );
 
 console.log(angular.title);
+
+Course.printTitle(typescript);

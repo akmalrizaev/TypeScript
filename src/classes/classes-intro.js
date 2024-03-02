@@ -13,6 +13,9 @@ var Course = /** @class */ (function () {
     Course.prototype.changeTitle = function () {
         this.title = '';
     };
+    Course.printTitle = function (course) {
+        console.log("The title of the course ".concat(course.title));
+    };
     Object.defineProperty(Course.prototype, "age", {
         get: function () {
             var ageInMs = new Date().getTime() - this.creationDt.getTime();
@@ -47,3 +50,4 @@ console.log(Course.TYPESCRIPT_TITLE);
 console.log(Course.TOTAL_COURSE);
 var angular = new Course('Angular Bootcamp', 'Learn Angular Fundamentals', new Date(2022, 1, 1));
 console.log(angular.title);
+Course.printTitle(typescript);
