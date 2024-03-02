@@ -12,10 +12,10 @@ class Course {
   static readonly TYPESCRIPT_TITLE = 'Typescript Bootcamp';
 
   constructor(
-    private _title: string,
-    private price: number,
-    private subtitle: string,
-    private creationDt: Date
+    protected _title: string,
+    protected price: number,
+    protected subtitle: string,
+    protected creationDt: Date
   ) {
     // this.title = title;
     // this.subtitle = subtitle;
@@ -25,7 +25,7 @@ class Course {
     Course.TOTAL_COURSE++;
   }
 
-  validate() {
+  protected validate() {
     console.log('Called Course validation()');
 
     if (this.price <= 0) {
@@ -67,7 +67,7 @@ class FreeCourse extends Course {
     super(title, 0, subtitle, creationDt);
   }
 
-  validate() {
+  protected validate() {
     console.log('Called FreeCourse validation()');
   }
 }
