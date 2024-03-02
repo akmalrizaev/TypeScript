@@ -1,8 +1,9 @@
 // const date = new Date();
+import { HasId, HasTitle } from './interfaces';
 
 // console.log(date.getTime());
 
-abstract class Course {
+abstract class Course implements HasTitle {
   // private title: string;
   // private subtitle: string;
   // private creationDt: Date;
@@ -12,6 +13,7 @@ abstract class Course {
   static readonly TYPESCRIPT_TITLE = 'Typescript Bootcamp';
 
   protected constructor(
+    public id: string,
     protected _title: string,
     protected price: number,
     protected subtitle: string,
@@ -23,6 +25,10 @@ abstract class Course {
 
     this.validate();
     Course.TOTAL_COURSE++;
+  }
+
+  printId() {
+    console.log(`The course id is ${this.id}`);
   }
 
   protected abstract validate();
@@ -61,11 +67,12 @@ abstract class Course {
 
 class FreeCourse extends Course {
   constructor(
+    id: string,
     title: string,
     subtitle: string,
     creationDt = new Date(2023, 1, 1)
   ) {
-    super(title, 0, subtitle, creationDt);
+    super(id, title, 0, subtitle, creationDt);
   }
 
   protected validate() {
@@ -98,6 +105,7 @@ class FreeCourse extends Course {
 // Course.printTitle(typescript);
 
 const javascript = new FreeCourse(
+  '1',
   'Javascript Bootcamp',
   'Learn Javascript Fundamentals',
   new Date(2024, 1, 1)
