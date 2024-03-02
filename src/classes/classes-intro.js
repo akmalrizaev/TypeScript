@@ -1,15 +1,22 @@
 // const date = new Date();
 // console.log(date.getTime());
 var Course = /** @class */ (function () {
-    function Course(_title, subtitle, creationDt) {
-        this._title = _title;
-        this.subtitle = subtitle;
-        this.creationDt = creationDt;
+    function Course(_title, price, subtitle, creationDt) {
         // this.title = title;
         // this.subtitle = subtitle;
         // this.creationDt = creationDt;
+        this._title = _title;
+        this.price = price;
+        this.subtitle = subtitle;
+        this.creationDt = creationDt;
+        this.validate();
         Course.TOTAL_COURSE++;
     }
+    Course.prototype.validate = function () {
+        if (this.price <= 0) {
+            throw 'Price must be larger than zero';
+        }
+    };
     Course.prototype.changeTitle = function () {
         this.title = '';
     };
@@ -44,10 +51,10 @@ var Course = /** @class */ (function () {
     Course.TYPESCRIPT_TITLE = 'Typescript Bootcamp';
     return Course;
 }());
-var typescript = new Course('Typesript Bootcamp', 'Learn the language fundamentals', new Date(2020, 1, 1));
+var typescript = new Course('Typesript Bootcamp', 100, 'Learn the language fundamentals', new Date(2020, 1, 1));
 console.log(typescript.title);
 console.log(Course.TYPESCRIPT_TITLE);
 console.log(Course.TOTAL_COURSE);
-var angular = new Course('Angular Bootcamp', 'Learn Angular Fundamentals', new Date(2022, 1, 1));
+var angular = new Course('Angular Bootcamp', 0, 'Learn Angular Fundamentals', new Date(2022, 1, 1));
 console.log(angular.title);
 Course.printTitle(typescript);

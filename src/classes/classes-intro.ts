@@ -13,13 +13,22 @@ class Course {
 
   constructor(
     private _title: string,
+    private price: number,
     private subtitle: string,
     private creationDt: Date
   ) {
     // this.title = title;
     // this.subtitle = subtitle;
     // this.creationDt = creationDt;
+
+    this.validate();
     Course.TOTAL_COURSE++;
+  }
+
+  validate() {
+    if (this.price <= 0) {
+      throw 'Price must be larger than zero';
+    }
   }
 
   changeTitle() {
@@ -49,6 +58,7 @@ class Course {
 
 const typescript = new Course(
   'Typesript Bootcamp',
+  100,
   'Learn the language fundamentals',
   new Date(2020, 1, 1)
 );
@@ -61,6 +71,7 @@ console.log(Course.TOTAL_COURSE);
 
 const angular = new Course(
   'Angular Bootcamp',
+  0,
   'Learn Angular Fundamentals',
   new Date(2022, 1, 1)
 );
